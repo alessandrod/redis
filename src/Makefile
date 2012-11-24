@@ -73,7 +73,7 @@ endif
 ifeq ($(MALLOC),jemalloc)
   DEPENDENCY_TARGETS+= jemalloc
   FINAL_CFLAGS+= -DUSE_JEMALLOC -I../deps/jemalloc/include
-  FINAL_LIBS+= ../deps/jemalloc/lib/libjemalloc.a -ldl
+  FINAL_LIBS+= ../deps/jemalloc/lib/libjemalloc.a -ldl -lm
 endif
 
 REDIS_CC=$(QUIET_CC)$(CC) $(FINAL_CFLAGS)
